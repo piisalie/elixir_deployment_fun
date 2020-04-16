@@ -1,8 +1,8 @@
 on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-elixir@v1
@@ -11,3 +11,7 @@ jobs:
           elixir-version: 1.9.4
       - run: mix deps.get
       - run: mix test
+      - run: npm install --prefix ./assets
+      - run: npm run deploy --prefix ./assets
+      - run: mix phx.digest
+      - run: MIX_ENV=prod mix release
