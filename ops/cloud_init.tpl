@@ -1,0 +1,13 @@
+#cloud-config
+ssh_deletekeys: True
+ssh_pwauth: False
+disable_root: True
+
+users:
+  - name: app
+    groups: sudo
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMzo8l3K3AHNpp+CxN7+XISGW9wq1ZywviCFLrxaogBAP32Sz6mN6GU+7zpwF8RRxEsyvReqe+CMqG+u2+uksoTbeehKEYVff7V6TxcNoOs8u5fSTwRZdK4+KzGOGZgWzAu2KPtUFBFIvwcxHCKBxdtHCPKJFLiyPUpNQtbt++BOl3LsiwrzK6CfUHMAeSByQWK35Nas2wLP5s+DvZyOemaDfpN+mzXPThhEuQ9kdIikkidjlACOoEWgKBCS69k7MIPpX9RiKHtsEMYLBXLcWu8LSRdNe1cxb0o9fJw+yVmUesCwmudxLJAmpmLe8/gzOhJEe6quNPvGNeHXljAP
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI4/gA1y+19d7K99kXI3CDrgT3Tzk1caZbweIQCe2D663nDyivNTX28/5eJNv/jX4mJnYAIvzJvQXdJSwsQWFt5IYkG+dgRHDVhn56eiT2ERUhGDcXJ7P0anGule8w8n6wQB6hT/FS8XUOEkWCnS5ubSHO1zjN8L84QFeYu42VqWQjGRCjHykqeherif7iE3M+r66juYl+brn3sjLAh2cUqyFBTrUs96n7Bf17uu4mkAcE/MqF/TTJcvNTbqHTT6pzAXThHOO/n3XRD/eMI/6kdozTDffjZtAqrlhBazyeX2x82NmYbGXl7DPwoVrsGAamniELzEnuZFbb/fMypxrei38tYUCnzpKWvPKoN1TApA2coBhpVprMZxF9sdVOfRE3eK+GFN93sYtqO/RmBDJYqqg0+25Kpdk0jqXgsnP1jutYVS9fe3Syz3ndDmxwgJ0yJbkEPTeR3Gtqf2SmpwMP5KRFo2Uz+D+J5Lz1OKoErssXqkkcHIFyJVdOyeNLYuVCk4lp+nCSYaXAZcl24p0bxwnBsOTmT3YA1LtOOJLxUi+Eja1QG+olQsJ1cpfqLdRZLl3gOrNyDfFua+IsiWAa6FMKmshxauuva5TbYMcxgtAB2CkSw2kCYswrMzT1cxLc7sgMo3+fs7ywWpee8Mk48JlsXw9sjQ/gshhPCqU+Jw==
